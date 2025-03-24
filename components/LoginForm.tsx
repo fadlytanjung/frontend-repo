@@ -27,7 +27,6 @@ const LoginForm: React.FC = () => {
 
       dispatch(setLoading(false));
     } catch (error) {
-      console.error({ error });
       dispatch(
         setError(error instanceof Error ? error.message : "Login Failed")
       );
@@ -75,7 +74,7 @@ const LoginForm: React.FC = () => {
             sx={{ mt: 2 }}
             loading={loading}
           >
-            Login {loading}
+            Login
           </Button>
         </form>
       </Paper>
