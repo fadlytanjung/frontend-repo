@@ -22,8 +22,8 @@ const LoginForm: React.FC = () => {
     try {
       const user = await loginUser(email, password);
       localStorage.setItem("token", user.token);
-      localStorage.setItem("uid", user.uid);
-      router.push("/main");
+      localStorage.setItem("uid", user.id);
+      router.push("/");
 
       dispatch(setLoading(false));
     } catch (error) {
@@ -39,7 +39,7 @@ const LoginForm: React.FC = () => {
       display="flex"
       justifyContent="center"
       alignItems="center"
-      sx={{ height: "calc(100vh - 54px)" }}
+      sx={{ height: '100vh' }}
       p={2}
     >
       <Paper elevation={3} sx={{ p: 4, maxWidth: 400, width: "100%" }}>

@@ -21,9 +21,14 @@ export default function ModeSwitch() {
     <Box
       sx={{
         display: "flex",
+        position: 'fixed',
+        top: 0,
+        right: 0,
+        height: 64,
         justifyContent: "flex-end",
         alignItems: "center",
         p: 1,
+        zIndex: (theme) => theme.zIndex.drawer + 2
       }}
     >
       <InputLabel id="mode-select-label">Dark Mode</InputLabel>

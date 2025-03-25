@@ -47,6 +47,6 @@ export const loginUser = async (email: string, password: string) => {
 
 export const logoutUser = async () => {
   localStorage.removeItem("token");
-  localStorage.removeItem("userId");
+  localStorage.removeItem("uid");
   await signOut(auth);
 };

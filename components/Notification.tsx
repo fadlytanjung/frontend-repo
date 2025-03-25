@@ -12,9 +12,12 @@ function Notification(props: AlertProps) {
 const NotificationPopup = () => {
   const dispatch = useDispatch();
   const error = useSelector((state: { user: UserState }) => state.user.error);
+  const success = useSelector(
+    (state: { user: UserState }) => state.user.success
+  );
   return (
     <Snackbar
-      open={!!error}
+      open={!!error || !!success}
       autoHideDuration={1000}
       onClose={() => {}}
       key="bottom-right"
@@ -25,9 +28,9 @@ const NotificationPopup = () => {
           onClose={() => {
             dispatch(setError(null));
           }}
-          severity="error"
+          severity={error ? "error" : "success"}
         >
-          {error}
+          {error || success}
         </Notification>
       </div>
     </Snackbar>
