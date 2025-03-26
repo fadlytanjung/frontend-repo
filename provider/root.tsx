@@ -7,6 +7,7 @@ import CssBaseline from "@mui/material/CssBaseline";
 import NotificationPopup from "@/components/Notification";
 import ModeSwitch from "@/components/ModeSwitch";
 import theme from "@/theme/theme";
+import AuthProvider from "./auth";
 
 export default function RootProvider({
   children,
@@ -19,6 +20,7 @@ export default function RootProvider({
         <CssBaseline />
         <ModeSwitch />
         <NotificationPopup />
+        <AuthProvider />
         {children}
       </ThemeProvider>
     </Provider>
